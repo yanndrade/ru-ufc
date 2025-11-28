@@ -1,0 +1,43 @@
+[project]
+name = "ru-ufc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "yanndrade-wsl", email = "ybamello@hotmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.9.3,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.6",
+    "taskipy>=1.14.1",
+]
+docs = [
+    "mkdocs-material>=9.7.0",
+    "mkdocstrings>=1.0.0",
+    "mkdocstrings-python>=2.0.0",
+]
+
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = '-p no:warnings'
