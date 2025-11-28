@@ -1,7 +1,7 @@
 [project]
 name = "ru-ufc"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python SDK and CLI for querying Universidade Federal do Ceará (UFC) university restaurant (RU) balances, history, and menus."
 readme = "README.md"
 authors = [
     { name = "yanndrade-wsl", email = "ybamello@hotmail.com" }
@@ -19,11 +19,14 @@ dev = [
     "pytest-cov>=7.0.0",
     "ruff>=0.14.6",
     "taskipy>=1.14.1",
+    "towncrier>=25.8.0",
 ]
 docs = [
     "mkdocs-material>=9.7.0",
+    "mkdocs-towncrier>=0.1.5",
     "mkdocstrings>=1.0.0",
     "mkdocstrings-python>=2.0.0",
+    "pymdown-extensions>=10.17.2",
 ]
 
 
@@ -51,3 +54,12 @@ pre_test = 'task lint'
 test = 'pytest -s -x --cov=fast_zero -vv'
 post_test = 'coverage html'
 docs = "mkdocs serve"
+
+
+[tool.towncrier]
+package = "ru_ufc"
+filename = "CHANGELOG.md"
+directory = "changelog.d"
+title_format = "## {version} - {project_date}"
+issue_format = "[#{issue}](https://github.com/yanndrade/ru-ufc/issues/{issue})"
+
