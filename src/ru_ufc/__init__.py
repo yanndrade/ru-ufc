@@ -1,2 +1,2 @@
 def hello() -> str:
-    return "Hello from ru-ufc!"
+    return 'Hello from ru-ufc!'
